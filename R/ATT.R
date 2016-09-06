@@ -8,7 +8,7 @@
 #' m.out  <- matchit(treat ~ educ + black, data = lalonde)
 #' att(obj = m.out, Y = lalalonde$re78)
 att <- function(obj, Y){
-  stopifnot(is(obj, "class"))
+  stopifnot(is(obj, "matchit"))
   ww <- obj$weights
   tt <- obj$treat
   mut <- weighted.mean(Y[ww > 0 & tt == 1], ww[ww > 0 & tt == 1])
