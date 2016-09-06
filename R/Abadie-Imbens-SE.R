@@ -1,7 +1,19 @@
-
-# Abadie, Drukker, Herr & Imbens 2004
-sourceCpp("lib/KM-Abadie.cpp")
-abadie.imbens.se <- function(obj, Y){
+#' Calculates the Standard Error for the  Average Treatment Effect
+#' for the Treated with a
+#' @param obj MatchIt Object
+#' @param Y Response Vector
+#' @return SE for the ATT of \code{Y}
+#' @references
+#' Abadie, A., Drukker, D., Herr, J.L. & Imbens, G. (2004).Implementing matching estimators for average treatment effects in Stata. The Stata Jorunal (4), pp. 290 - 311.
+#'
+#' @examples
+#' data("lalonde")
+#' m.out  <- matchit(treat ~ educ + black, data = lalonde)
+#' att(obj = m.out, Y = lalonde$re78)
+#' abadie_imbens_se(obj = m.out, Y = lalonde$re78)
+abadie_imbens_se <- function(obj, Y){
+  stopifnot(is(obj, "class"))
+  # Abadie, Drukker, Herr & Imbens 2004
   tt <- obj$treat
   ww <- obj$weights
   mm <- as.matrix(obj$match.matrix[ww[tt==1]>0, ])

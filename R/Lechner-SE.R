@@ -1,5 +1,18 @@
-# Lechner
-lechner.se <- function(obj, Y){
+#' Calculates the Standard Error for the  Average Treatment Effect
+#' for the Treated with a
+#' - parametric
+#' _ Zelig like
+#' @param obj MatchIt Object
+#' @param Y Response Vector
+#' @return SE for the ATT of \code{Y}
+#' @references
+#' Lechner (2001)
+#' @examples
+#' data("lalonde")
+#' m.out  <- matchit(treat ~ educ + black, data = lalonde)
+#' att(obj = m.out, Y = lalonde$re78)
+#' lechner_se(obj = m.out, Y = lalonde$re78)
+lechner_se <- function(obj, Y){
   # Lechner 2001
   ww <- obj$weights
   tt <- obj$treat
