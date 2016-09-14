@@ -12,8 +12,9 @@
 #' m.out  <- matchit(treat ~ educ + black, data = lalonde)
 #' att(obj = m.out, Y = lalonde$re78)
 #' abadie_imbens_se(obj = m.out, Y = lalonde$re78)
+#' @export
 abadie_imbens_se <- function(obj, Y){
-  stopifnot(is(obj, "class"))
+  stopifnot(methods::is(obj, "matchit"))
   # Abadie, Drukker, Herr & Imbens 2004
   tt <- obj$treat
   ww <- obj$weights
