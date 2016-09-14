@@ -10,7 +10,7 @@
 #' att(obj = m.out, Y = lalonde$re78)
 #' bootstrap.se(obj = m.out, Y = lalonde$re78)
 bootstrap.se <- function(obj, Y, max.iter = 1e3){
-  stopifnot(is(obj, "class"))
+  stopifnot(stats::is(obj, "matchit"))
   # Quelle??? Bootstrapping z.B. Becker, Baumert, etc.
   ww <- obj$weights
   tt <- obj$treat
