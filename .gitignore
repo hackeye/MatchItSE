@@ -6,4 +6,5 @@ RcppExports.R
 RcppExports.cpp
 *.dll
 *.o
+*.so
 *.Rd
