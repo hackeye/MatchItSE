@@ -7,6 +7,6 @@ context("Simple Tests")
 test_that("Fail on wrong object type", {
   fit.acc  <- matchit(treat ~ educ + black, data = lalonde)
   fit.fail <- fit.acc ; fit.fail <- class("Nonsense")
-  expect_error(att(obj = fit.acc, Y = lalalonde$re78), NA)
-  expect_error(att(obj = fit.fail, Y = lalalonde$re78))
+  expect_error(att(obj = fit.acc, Y = lalonde$re78), NA)
+  expect_error(att(obj = fit.fail, Y = lalonde$re78))
 })
