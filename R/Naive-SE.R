@@ -18,11 +18,9 @@ zelig_se <- function(obj, Y){
   XX <- cbind(1,obj$X)
   ic <- ww > 0 & tt == 0  # Index used control units
   it <- ww > 0 & tt == 1  # Index used treatment units
-  #fitc <- lm.wfit(x = XX[ic,], y = Y[ic], w = ww[ic])
-  #beta.hat <- mvrnorm(1000, fitc$coefficients, .vcov.lm.fit(fitc))
   fitc <- fastReg(Y[ic], XX[ic,], ww[ic])
-  beta.hat <- matrix(rnorm(1000 * ncol(fitc$vcov)), nrow = 1000, byrow = TRUE) %*% chol(fitc$vcov)
-  beta.hat <- sweep(beta.hat, 2, mean, "+")  # Add mean
+  beta.hat <- matrix(stats::rnorm(1000 * ncol(fitc$vcov)), nrow = 1000, byrow = TRUE) %*% chol(fitc$vcov)
+  beta.hat <- sweep(beta.hat, 2, fitc$coef, "+")  # Add mean
   pool.expected <- beta.hat %*% t(XX[it,])
   att.expected  <- colMeans(Y[it] - t(pool.expected))
   return(c(est = mean(pool.expected), sd = stats::sd(pool.expected),
