@@ -1,16 +1,20 @@
-#' Calculates the Average Treatment Effect for the Treated
-#' with a simple non-parametric bootstrap procedure.
+#' Non-parametric bootstrap Standard Error for the ATT
+#'
+#' Calculate the SE for the ATT with a non-parametric bootstrap method.
+#'
 #' @param obj MatchIt Object
 #' @param Y Response Vector
 #' @param max.iter Maximum bootstrap Iterations. Default is 1000.
 #' @return SE for the ATT of \code{Y}
 #' @examples
+#' library(MatchIt)
 #' data("lalonde")
 #' m.out  <- matchit(treat ~ educ + black, data = lalonde)
 #' att(obj = m.out, Y = lalonde$re78)
 #' bootstrap.se(obj = m.out, Y = lalonde$re78)
+#' @export
 bootstrap.se <- function(obj, Y, max.iter = 1e3){
-  stopifnot(stats::is(obj, "matchit"))
+  stopifnot(methods::is(obj, "matchit"))
   # Quelle??? Bootstrapping z.B. Becker, Baumert, etc.
   ww <- obj$weights
   tt <- obj$treat

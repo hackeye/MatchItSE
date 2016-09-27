@@ -1,17 +1,20 @@
-#' Calculates the Standard Error for the  Average Treatment Effect
-#' for the Treated with a
-#' - parametric
-#' _ Zelig like
+#' Lechner's Standard Error for the ATT
+#'
+#' Calculates the Standard Error for the  Average Treatment Effect with Lechner's
+#' method.
+#'
 #' @param obj MatchIt Object
 #' @param Y Response Vector
 #' @return SE for the ATT of \code{Y}
 #' @references
-#' Lechner (2001)
+#' Lechner, M. (2001). Identification and estimation of causal effects of multiple treatments under the conditional indepence assumption. In M. Lechner & F. Pfeiffer (Eds.), Econometric Evaluation of Labour Market Policies (pp. 43-58). Physica-Verlag: Heidelberg.
 #' @examples
+#' library(MatchIt)
 #' data("lalonde")
 #' m.out  <- matchit(treat ~ educ + black, data = lalonde)
 #' att(obj = m.out, Y = lalonde$re78)
 #' lechner_se(obj = m.out, Y = lalonde$re78)
+#' @export
 lechner_se <- function(obj, Y){
   stopifnot(methods::is(obj, "matchit"))
   # Lechner 2001

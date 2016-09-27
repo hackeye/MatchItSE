@@ -1,11 +1,17 @@
-#' Calculates the Standard Error for the  Average Treatment Effect
-#' for the Treated with a
-#' - parametric
-#' _ Zelig like
+#' Parametric bootstrap Standard Error for the ATT
+#'
+#' Calculates the Standard Error for the  Average Treatment Effect with a
+#' a parametric bootstrap method.
+#' This procedure mimics the output of the zelig packages as shown
+#' on pages 12 and 13 in the MatchIt vignette.
+#'
 #' @param obj MatchIt Object
 #' @param Y Response Vector
 #' @return SE for the ATT of \code{Y}
+#' @references
+#' \href{http://imai.princeton.edu/research/files/matchit.pdf}{MatchIt vignette}
 #' @examples
+#' library(MatchIt)
 #' data("lalonde")
 #' m.out  <- matchit(treat ~ educ + black, data = lalonde)
 #' att(obj = m.out, Y = lalonde$re78)
@@ -24,5 +30,5 @@ zelig_se <- function(obj, Y){
   pool.expected <- beta.hat %*% t(XX[it,])
   att.expected  <- colMeans(Y[it] - t(pool.expected))
   return(c(est = mean(pool.expected), sd = stats::sd(pool.expected),
-           att.est = mean(att.expected), att.se = sd(att.expected)))
+           att.est = mean(att.expected), att.se = stats::sd(att.expected)))
 }

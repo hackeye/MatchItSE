@@ -1,8 +1,22 @@
+#' Rebuilds the model matrix for MatchIt objects
+#'
+#' In order to use estimate Standard Errors with the Abadie and Imben's method
+#' the MatchIt object needs to have a model matrix. The model matrix is created
+#' based on the subclasses given by the full matching procedure.
+#'
+#' This function is experimental! Most methods for estimating standard errors
+#' are only documented for NN matching. Please use with caution!
+#'
+#' @param fit MatchIt Object
+#' @return MatchIt Object with added model matrix
 #' @examples
+#' library(MatchIt)
 #' data('lalonde')
 #' m.out  <- matchit(treat ~ educ + black, data = lalonde, method = 'full')
 #' att(obj = m.out, Y = lalonde$re78)
+#' \dontrun{
 #' abadie_imbens_se(m.out, lalonde$re78)  # FAILS!
+#' }
 #' m.out <- add_model_matrix(m.out)
 #' abadie_imbens_se(m.out, lalonde$re78)
 #' @export

@@ -6,9 +6,10 @@
 #' @param Y Response Vector
 #' @return The ATT for \code{Y}
 #' @examples
+#' library(MatchIt)
 #' data("lalonde")
 #' m.out  <- matchit(treat ~ educ + black, data = lalonde)
-#' att(obj = m.out, Y = lalalonde$re78)
+#' att(obj = m.out, Y = lalonde$re78)
 #' @export
 att <- function(obj, Y){
   stopifnot(methods::is(obj, "matchit"))
