@@ -1,15 +1,17 @@
 Package: MatchItSE
 Type: Package
-Title: Calculates SE for Matched Samples from MatchIT
+Title: Calculates SE for Matched Samples from MatchIt
 Version: 1.0
 Date: 2016-09-06
 Author: Thorsten Henke
-Maintainer: <MatchItSE@thorsten-henke.de>
+Maintainer: Thorsten Henke <MatchItSE@thorsten-henke.de>
 Description:
-    Please note that SE intentionally not .... blabla
-License: GPL-3
+    Various methods for Standard Error estimation for MatchIt objects
+License: GPL (>= 2)
+Depends: R (>= 3.3.1)
 Imports:
-    Rcpp (>= 0.12.4)
+    Rcpp (>= 0.12.4), MatchIt, optmatch, methods
 LinkingTo: Rcpp, RcppArmadillo
 RoxygenNote: 5.0.1
-Suggests: testthat, MatchIt, MASS
+Encoding: UTF-8
+NeedsCompilation: yes

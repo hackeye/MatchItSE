@@ -3,4 +3,8 @@
 export(abadie_imbens_se)
 export(add_model_matrix)
 export(att)
+export(bootstrap.se)
+export(lechner_se)
 export(zelig_se)
+importFrom(Rcpp,evalCpp)
+useDynLib(MatchItSE)
