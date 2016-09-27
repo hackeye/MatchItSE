@@ -2,7 +2,7 @@
 MatchItSE
 =========
 
-The MatchItSE package calculates Standard Errors for fitted MatchIt objectst. Please note that this package requires an installation of the MatchIt package.
+The MatchItSE package calculates Standard Errors for fitted MatchIt objects. Please note that this package requires an installation of the MatchIt package.
 
 Installation
 ------------
@@ -15,7 +15,7 @@ devtools::install_github(repo = "thorstenhenke/MatchItSE")
 
 If you like to install the (propably) more mature version of the package use CRAN with the following command:
 
-Please Note that the package is **not available on CRAN**, since the submission process is not yet finished. **The following command will certainly fail!**
+Please Note that the package is **not available on CRAN** (27.09.2016 \[CEST\]), since the submission process is not yet finished. **The following command will certainly fail!**
 
 ``` r
 install.packages("MatchItSE")
