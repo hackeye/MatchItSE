@@ -1,5 +1,7 @@
-#' Calculates the Standard Error for the  Average Treatment Effect
-#' for the Treated with a
+#' Abadie Imben's Standard Error for the ATT
+#'
+#' Calculate the SE for the ATT with Abadie & Imben's method.
+#'
 #' @param obj MatchIt Object
 #' @param Y Response Vector
 #' @return SE for the ATT of \code{Y}
@@ -15,18 +17,17 @@
 #' @export
 abadie_imbens_se <- function(obj, Y){
   stopifnot(methods::is(obj, "matchit"))
-  # Abadie, Drukker, Herr & Imbens 2004
   tt <- obj$treat
   ww <- obj$weights
-  mm <- as.matrix(obj$match.matrix[ww[tt==1]>0, ])
+  mm <- as.matrix(obj$match.matrix[ww[tt == 1] > 0, ])
   nm <- rownames(obj$X)
   nt <- sum(ww > 0 & tt == 1)  # Count treated
   #nc <- sum(ww > 0 & tt == 0)  # Count control
   tau.hat <- att(obj, Y)
-  if (ncol(mm)>1){
+  if (ncol(mm) > 1){
     yi <- Y[match(rownames(mm), nm)]
     yl <- sapply(1:ncol(mm), function(j){ Y[match(mm[,j], nm)] })
-    sigma.t <- sum(rowMeans( (yi - yl - tau.hat)^2, na.rm=T)/(2*nt))
+    sigma.t <- sum(rowMeans( (yi - yl - tau.hat)^2, na.rm = T)/(2*nt))
     #scale.sample.t <- (nt + sum(as.vector(table(mm))^2))/(nt^2)
     scale.sample.t <- (nt + cppKMsqSum(mm, unique(mm[!is.na(mm)]), 1/rowSums(!is.na(mm))))/(nt^2)
   } else {

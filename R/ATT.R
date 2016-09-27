@@ -1,5 +1,7 @@
-#' Calculates the Average Treatment Effect for the Treated
-#' for a given MathIt object and a response vector.
+#' Average Treatment Effect for the Treated (ATT)
+#'
+#' Calculate the ATT for a given MathIt object and a given response vector.
+#'
 #' @param obj MatchIt Object
 #' @param Y Response Vector
 #' @return The ATT for \code{Y}
