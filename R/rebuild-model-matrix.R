@@ -10,15 +10,15 @@
 #' @param fit MatchIt Object
 #' @return MatchIt Object with added model matrix
 #' @examples
+#' \dontrun{
 #' library(MatchIt)
 #' data('lalonde')
 #' m.out  <- matchit(treat ~ educ + black, data = lalonde, method = 'full')
 #' att(obj = m.out, Y = lalonde$re78)
-#' \dontrun{
 #' abadie_imbens_se(m.out, lalonde$re78)  # FAILS!
-#' }
 #' m.out <- add_model_matrix(m.out)
 #' abadie_imbens_se(m.out, lalonde$re78)
+#' }
 #' @export
 add_model_matrix <- function(fit){
   warning("\nThis function is experimental!

@@ -7,11 +7,13 @@
 #' @param max.iter Maximum bootstrap Iterations. Default is 1000.
 #' @return SE for the ATT of \code{Y}
 #' @examples
-#' library(MatchIt)
-#' data("lalonde")
-#' m.out  <- matchit(treat ~ educ + black, data = lalonde)
-#' att(obj = m.out, Y = lalonde$re78)
-#' bootstrap.se(obj = m.out, Y = lalonde$re78)
+#' \dontrun{
+#'   library(MatchIt)
+#'   data("lalonde")
+#'   m.out  <- matchit(treat ~ educ + black, data = lalonde)
+#'   att(obj = m.out, Y = lalonde$re78)
+#'   bootstrap.se(obj = m.out, Y = lalonde$re78)
+#' }
 #' @export
 bootstrap.se <- function(obj, Y, max.iter = 1e3){
   stopifnot(methods::is(obj, "matchit"))

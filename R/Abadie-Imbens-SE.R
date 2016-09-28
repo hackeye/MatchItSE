@@ -9,11 +9,13 @@
 #' Abadie, A., Drukker, D., Herr, J.L. & Imbens, G. (2004).Implementing matching estimators for average treatment effects in Stata. The Stata Jorunal (4), pp. 290 - 311.
 #'
 #' @examples
-#' library(MatchIt)
-#' data("lalonde")
-#' m.out  <- matchit(treat ~ educ + black, data = lalonde)
-#' att(obj = m.out, Y = lalonde$re78)
-#' abadie_imbens_se(obj = m.out, Y = lalonde$re78)
+#' \dontrun{
+#'   library(MatchIt)
+#'   data("lalonde")
+#'   m.out  <- matchit(treat ~ educ + black, data = lalonde)
+#'   att(obj = m.out, Y = lalonde$re78)
+#'   abadie_imbens_se(obj = m.out, Y = lalonde$re78)
+#' }
 #' @export
 abadie_imbens_se <- function(obj, Y){
   stopifnot(methods::is(obj, "matchit"))

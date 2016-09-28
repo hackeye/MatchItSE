@@ -9,11 +9,13 @@
 #' @references
 #' Lechner, M. (2001). Identification and estimation of causal effects of multiple treatments under the conditional indepence assumption. In M. Lechner & F. Pfeiffer (Eds.), Econometric Evaluation of Labour Market Policies (pp. 43-58). Physica-Verlag: Heidelberg.
 #' @examples
-#' library(MatchIt)
-#' data("lalonde")
-#' m.out  <- matchit(treat ~ educ + black, data = lalonde)
-#' att(obj = m.out, Y = lalonde$re78)
-#' lechner_se(obj = m.out, Y = lalonde$re78)
+#' \dontrun{
+#'   library(MatchIt)
+#'   data("lalonde")
+#'   m.out  <- matchit(treat ~ educ + black, data = lalonde)
+#'   att(obj = m.out, Y = lalonde$re78)
+#'   lechner_se(obj = m.out, Y = lalonde$re78)
+#' }
 #' @export
 lechner_se <- function(obj, Y){
   stopifnot(methods::is(obj, "matchit"))

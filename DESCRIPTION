@@ -12,7 +12,7 @@ BugReports: https://github.com/thorstenhenke/MatchItSE/issues
 License: GPL (>= 2)
 Depends: R (>= 3.3.1)
 Imports:
-    Rcpp (>= 0.12.4), MatchIt, optmatch, methods
+    Rcpp (>= 0.12.4), methods
 LinkingTo: Rcpp, RcppArmadillo
 RoxygenNote: 5.0.1
 Encoding: UTF-8

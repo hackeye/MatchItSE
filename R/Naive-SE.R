@@ -11,11 +11,13 @@
 #' @references
 #' \href{http://imai.princeton.edu/research/files/matchit.pdf}{MatchIt vignette}
 #' @examples
-#' library(MatchIt)
-#' data("lalonde")
-#' m.out  <- matchit(treat ~ educ + black, data = lalonde)
-#' att(obj = m.out, Y = lalonde$re78)
-#' zelig_se(obj = m.out, Y = lalonde$re78)
+#' \dontrun{
+#'   library(MatchIt)
+#'   data("lalonde")
+#'   m.out  <- matchit(treat ~ educ + black, data = lalonde)
+#'   att(obj = m.out, Y = lalonde$re78)
+#'   zelig_se(obj = m.out, Y = lalonde$re78)
+#' }
 #' @export
 zelig_se <- function(obj, Y){
   stopifnot(methods::is(obj, "matchit"))
