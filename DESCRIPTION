@@ -1,13 +1,12 @@
 Package: MatchItSE
 Type: Package
-Title: Calculates SE for Matched Samples from MatchIt
+Title: Calculates SE for Matched Samples from 'MatchIt'
 Version: 1.0
 Date: 2016-09-06
 Author: Thorsten Henke
 Maintainer: Thorsten Henke <MatchItSE@thorsten-henke.de>
 Description:
-    The package contains various methods for Standard Error estimation 
-    for MatchIt objects. 
+    Contains various methods for Standard Error estimation for 'MatchIt' objects.
 URL: https://github.com/thorstenhenke/MatchItSE
 BugReports: https://github.com/thorstenhenke/MatchItSE/issues
 License: GPL (>= 2)
