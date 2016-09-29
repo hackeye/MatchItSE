@@ -6,6 +6,7 @@ MatchItSE
 
 <!-- Missing badge for code coverage. For an example see: https://raw.githubusercontent.com/hadley/dplyr/master/README.Rmd -->
 <!-- devtools::use_appveyor() -->
+<!-- devtools::use_codecov() -->
 The MatchItSE package calculates Standard Errors for fitted MatchIt objects. Please note that this package requires an installation of the MatchIt package.
 
 Installation
