@@ -2,8 +2,9 @@
 MatchItSE
 =========
 
-[![Travis-CI Build Status](https://travis-ci.org/thorstenhenke/MatchItSE.png?branch=master)](https://travis-ci.org/thorstenhenke/MatchItSE/) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/thorstenhenke/MatchItSE?branch=master&svg=true)](https://ci.appveyor.com/project/thorstenhenke/MatchItSE) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/MatchItSE)](http://cran.r-project.org/package=MatchItSE) <!-- devtools::use_codecov() -->
+[![Travis-CI Build Status](https://travis-ci.org/thorstenhenke/MatchItSE.png?branch=master)](https://travis-ci.org/thorstenhenke/MatchItSE/) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/thorstenhenke/MatchItSE?branch=master&svg=true)](https://ci.appveyor.com/project/thorstenhenke/MatchItSE) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/MatchItSE)](http://cran.r-project.org/package=MatchItSE)
 
+<!-- devtools::use_codecov() -->
 The MatchItSE package calculates Standard Errors for fitted MatchIt objects. Please note that this package requires an installation of the MatchIt package.
 
 Installation
