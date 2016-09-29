@@ -15,8 +15,6 @@ devtools::install_github(repo = "thorstenhenke/MatchItSE")
 
 If you like to install the (propably) more mature version of the package use CRAN with the following command:
 
-Please Note that the package is **not available on CRAN** (27.09.2016 \[CEST\]), since the submission process is not yet finished. **The following command will certainly fail!**
-
 ``` r
 install.packages("MatchItSE")
 ```
