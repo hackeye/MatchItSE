@@ -4,6 +4,11 @@ output: github_document
 
 # MatchItSE
 
+[![Travis-CI Build Status](https://travis-ci.org/thorstenhenke/MatchItSE.png?branch=master)](https://travis-ci.org/thorstenhenke/MatchItSE/)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/MatchItSE)](http://cran.r-project.org/package=MatchItSE)
+<!-- Missing badge for code coverage. For an example see: https://raw.githubusercontent.com/hadley/dplyr/master/README.Rmd -->
+<!-- devtools::use_appveyor() -->
+
 The MatchItSE package calculates Standard Errors for fitted MatchIt objects.
 Please note that this package requires an installation of the MatchIt package. 
 
@@ -20,12 +25,10 @@ devtools::install_github(repo = "thorstenhenke/MatchItSE")
 If you like to install the (propably) more mature version of the package use 
 CRAN with the following command: 
 
-Please Note that the package is __not available on CRAN__ (`r format(Sys.time(), "%d.%m.%Y [%Z]")`), 
-since the submission process is not yet finished. __The following command will certainly fail!__ 
-
 ```{r, eval=FALSE, echo=TRUE}
 install.packages("MatchItSE")
 ```
+
 
 ## Contact
 
