@@ -6,8 +6,10 @@ output: github_document
 
 [![Travis-CI Build Status](https://travis-ci.org/thorstenhenke/MatchItSE.png?branch=master)](https://travis-ci.org/thorstenhenke/MatchItSE/)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/MatchItSE)](http://cran.r-project.org/package=MatchItSE)
+
 <!-- Missing badge for code coverage. For an example see: https://raw.githubusercontent.com/hadley/dplyr/master/README.Rmd -->
 <!-- devtools::use_appveyor() -->
+
 
 The MatchItSE package calculates Standard Errors for fitted MatchIt objects.
 Please note that this package requires an installation of the MatchIt package. 
